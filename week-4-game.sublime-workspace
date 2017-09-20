@@ -1,0 +1,777 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"attack",
+				"attackButton"
+			],
+			[
+				"a",
+				"attackButton"
+			],
+			[
+				"opponents",
+				"numberOpponents"
+			],
+			[
+				"defender",
+				"defenderSelected"
+			],
+			[
+				"number",
+				"numberOpponents"
+			],
+			[
+				"defe",
+				"defenderHealth"
+			],
+			[
+				"player",
+				"playerHealth"
+			],
+			[
+				"health",
+				"healthID"
+			],
+			[
+				"char",
+				"characterID"
+			],
+			[
+				"oppent",
+				"opponentHealth"
+			],
+			[
+				"heal",
+				"healthPoints"
+			],
+			[
+				"atta",
+				"attackPower"
+			],
+			[
+				"attac",
+				"attackDamage"
+			],
+			[
+				"hea",
+				"healthPoints"
+			],
+			[
+				"opp",
+				"opponentSelected"
+			],
+			[
+				"opponent",
+				"opponent"
+			],
+			[
+				"healthP",
+				"healthPointsSpan"
+			],
+			[
+				"healt",
+				"healthPointsSpan"
+			],
+			[
+				"charater",
+				"characterContainer"
+			],
+			[
+				"cha",
+				"characterContainer"
+			],
+			[
+				"chat",
+				"character_area"
+			],
+			[
+				"charat",
+				"character-area"
+			],
+			[
+				"co",
+				"counterAttackPower"
+			],
+			[
+				"character",
+				"characterContainer"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"charca",
+				"characterSource"
+			],
+			[
+				"vader",
+				"vader"
+			],
+			[
+				"font",
+				"font-language-override"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"align",
+				"align-content"
+			],
+			[
+				"al",
+				"align-self"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"to",
+				"toUpperCase"
+			],
+			[
+				"las",
+				"lastAnswer"
+			],
+			[
+				"array",
+				"arrayWrongGuesses"
+			],
+			[
+				"reset",
+				"resetGame"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"remaining",
+				"remainingGuesses"
+			],
+			[
+				"rest",
+				"resetGame"
+			],
+			[
+				"correct",
+				"correctGuesses"
+			],
+			[
+				"arra",
+				"arrayAnswer"
+			],
+			[
+				"game",
+				"gameOver"
+			],
+			[
+				"remiain",
+				"remainingGuesses"
+			],
+			[
+				"is",
+				"isCorrectGuess"
+			],
+			[
+				"remainin",
+				"remainingGuesses"
+			],
+			[
+				"guess",
+				"guess"
+			],
+			[
+				"arr",
+				"arrayLettersGuessed"
+			],
+			[
+				"answer",
+				"answerLength"
+			],
+			[
+				"current",
+				"currentWord"
+			],
+			[
+				"container",
+				"container-fluid"
+			],
+			[
+				"animal",
+				"zooAnimals"
+			],
+			[
+				"backgo",
+				"background-color"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"magin",
+				"margin-left"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"con",
+				"container-fluid"
+			],
+			[
+				"border-left",
+				"border-left-style"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"height",
+				"min-height"
+			],
+			[
+				"border-top",
+				"border-top-style"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"BACKGROUND",
+				"background-color"
+			],
+			[
+				"bor",
+				"border-width"
+			],
+			[
+				"text-d",
+				"text-decoration"
+			],
+			[
+				"s",
+				"sans-serif"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"colr",
+				"color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1819,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "// Coding boot camp week 4 homework. Star Wars RPG game.\n\n// initialise variables\nvar imagePath = \"assets/images/\";\nvar arrayCharacters = [\"luke\", \"leia\", \"boba\", \"vader\"];\n\nvar playerSelected = false;\nvar defenderSelected = false;\n\nvar playerHealth = 0;\nvar defenderHealth = 0;\n\nvar attackNumber = 1;\n\n// character details\nvar luke = {id: \"luke\", name: \"Luke Skywalker\", healthPoints: 100, attackPower: 8, counterAttackPower: 5, image:\"luke.jpg\", headshot:\"lukeHead.jpg\"};\nvar leia = {id: \"leia\", name: \"Princess Leia\", healthPoints: 120, attackPower: 6, counterAttackPower: 10, image:\"leia.jpg\", headshot:\"leiaHead.jpg\"};\nvar boba = {id: \"boba\", name: \"Boba Fett\", healthPoints: 150, attackPower: 10, counterAttackPower: 15, image:\"boba.jpg\", headshot:\"bobaHead.jpg\"};\nvar vader = {id: \"vader\", name: \"Darth Vader\", healthPoints: 180, attackPower: 12, counterAttackPower: 25, image:\"vader.jpg\", headshot:\"vaderHead.jpg\"};\n\n// TODO: calculate number of opponents rather than a fixed number. Will need to put characters in an array?\nvar numberOpponents = 3;\n\n// attack button is initially hidden\n\t$ (\"#attackButton\").hide();\n\n\n// declare functions\nfunction createCharacter(item, targetArea) {\n\n\t// This function creates a div for a character, with an image and statistics.\n\n\t// variables\n\tvar characterSource = imagePath + item.headshot;\t\t\t// this is the path of the image for the character\n\tvar characterID = \"#\" + item.id\n\tvar healthID = item.id + \"Health\";\t\t\t\t\t\t\t// the unique id for the character with \"Health\" on the end becomes the id for health points \n\n\t// create div for the character\n\tvar characterContainer\t= $(\"<div>\");\n\t\tcharacterContainer.attr(\"class\", \"gameCharacter\");\t\t// All character divs have a class of \"gameCharacter\".\n\t\tcharacterContainer.attr(\"id\", item.id);\t\t\t\t\t// the id for the div is the id retrieved from the character object\n\t\tcharacterContainer.attr(\"healthPoints\", item.healthPoints);\n\t\tcharacterContainer.attr(\"attackPower\", item.attackPower);\n\t\tcharacterContainer.attr(\"counterAttackPower\", item.counterAttackPower);\n\n\t// add the character's name to the div as text\n\tcharacterContainer.text(item.name);\n\n\t// display the character in the correct area of the page\n\t$ (targetArea).append(characterContainer);\n\n\t// add image to character div\n\tvar characterImage = $(\"<img>\");\n\t\tcharacterImage.attr(\"class\", \"headshot\");\t\t\t\t// the image for the character has the class of \"headshot\"\n\t\tcharacterImage.attr(\"src\", characterSource);\n\t\tcharacterImage.attr(\"alt\", item.name);\n\n\t$ (characterContainer).append(characterImage);\n\n\t// show healthPoints in a span in the character div \n\tvar healthPointsSpan = $(\"<span>\");\n\t\thealthPointsSpan.attr(\"id\", healthID);\n\n\thealthPointsSpan.text(item.healthPoints);\n\n\t$ (characterContainer).append(\"Health Points: \");\n\t$ (characterContainer).append(healthPointsSpan);\n\n} //end of createCharacter function\n\n\n\n// run the following after the document has loaded\n$(document).ready(function(){\n\n\t// place character images in character area\n\tcreateCharacter(luke, character_area);\n\tcreateCharacter(leia, character_area);\n\tcreateCharacter(boba, character_area);\n\tcreateCharacter(vader, character_area);\n\n\n\t// click on a character\n\t$(\".gameCharacter\").on(\"click\", function() {\n\n\t\t// if no player character has been selected, choose this character as the player\n\t\tif (playerSelected == false) {\n\n\t\t\t// identify the current id of the character selected, and the span where the character's health is shown\n\t\t\tcharacterID = \"#\" + $ (this).attr(\"id\");\n\t\t\thealthID = characterID + \"Health\";\n\n\t\t\t// change the id of the character that has been clicked to \"player\"\n\t\t\t$ (characterID).attr(\"id\", \"player\");\n\n\t\t\t// change the id of the span where the character's health is shown to \"playerHealth\"\n\t\t\t$ (healthID).attr(\"id\", \"playerHealth\");\n\n\t\t\t// character's health points becomes the player's starting health\n\t\t\tplayerHealth = $ (\"#player\").attr(\"healthPoints\");\n\n\t\t\t// move player to player area\n\t\t\t$ (\"#player\").appendTo(\"#player_area\");\n\n\t\t\t// record that a player has been selected\n\t\t\tplayerSelected = true;\n\n\t\t\t// change instructions\n\t\t\t$ (\"#message_area\").text(\"Choose your first opponent ...\");\n\n\t\t}\n\n\t\telse if (defenderSelected == false) {\n\n\t\t\t// identify the current id of the character selected, and the span where the character's health is shown\n\t\t\tcharacterID = \"#\" + $ (this).attr(\"id\");\n\t\t\thealthID = characterID + \"Health\";\n\n\t\t\t// change the id of the character that has been clicked to \"defender\"\n\t\t\t$ (characterID).attr(\"id\", \"defender\");\n\n\t\t\t// change the id of the span where the character's health is shown to \"defenderHealth\"\n\t\t\t$ (healthID).attr(\"id\", \"defenderHealth\");\n\n\t\t\t// character's health points becomes the defender's starting health\n\t\t\tdefenderHealth = $ (\"#defender\").attr(\"healthPoints\");\n\n\t\t\t// move defender to defender area\n\t\t\t$ (\"#defender\").appendTo(\"#defender_area\");\n\n\t\t\t// show the attack button\n\t\t\t$ (\"#attackButton\").show();\n\n\t\t\tdefenderSelected = true;\n\n\t\t\t// change instructions\n\t\t\t$ (\"#message_area\").text(\"Click the attack button...\");\n\n\t\t} \n\n\t});\t//end of character click\n\n\n\t// click on attack button\n\t$(\"#attackButton\").on(\"click\", function() {\n\n\t\t// attack button is only active if player and defender have been selected and player and defender health are greater than zero\n\t\tif (playerSelected == true && defenderSelected == true && playerHealth > 0 && defenderHealth > 0) {\n\n\t\t\t// get player's attack power and multiply it by the number of attacks that have been made\n\t\t\tvar playerAttackPower = $ (\"#player\").attr(\"attackPower\");\n\t\t\tvar attackDamage = playerAttackPower * attackNumber;\n\n\t\t\t// reduce defender's health\n\t\t\tdefenderHealth -= attackDamage;\t\n\n\t\t\t// get defender's counter attack power\n\t\t\tvar counterAttackDamage = $ (\"#defender\").attr(\"counterAttackPower\");\n\n\t\t\t// reduce player's health\n\t\t\tplayerHealth -= counterAttackDamage;\n\n\t\t\t// show attack results on screen\n\t\t\t$ (\"#attack_messages\").text(\"You attacked for \" + attackDamage + \" damage.\");\t\t\t\n\t\t\t$ (\"#attack_messages\").append(\"Defender counter attacked for \" + counterAttackDamage + \" damage.\");\n\n\t\t\t// show player and defender remaining health on screen\n\t\t\t$ (\"#playerHealth\").text(playerHealth);\n\t\t\t$ (\"#defenderHealth\").text(defenderHealth);\n\n\t\t\t// if defender health reaches zero...\n\t\t\tif (defenderHealth <= 0) {\n\n\t\t\t\t// reduce number of opponents by one\n\t\t\t\tnumberOpponents -= 1;\n\n\t\t\t\t// delete defender div and set defenderSelected to false\n\t\t\t\t$ (\"#defender\").remove();\n\t\t\t\tdefenderSelected = false;\n\n\t\t\t\t// hide the attack button\n\t\t\t\t$ (\"#attackButton\").hide();\n\n\t\t\t\t// change instructions\n\t\t\t\t$ (\"#message_area\").text(\"You are victorious! Choose a new opponent...\");\n\t\t\t}\n\n\t\t\t// if all opponents have been defeated...\n\t\t\tif (numberOpponents === 0) {\n\n\t\t\t\t// hide the attack button\n\t\t\t\t$ (\"#attackButton\").hide();\n\n\t\t\t\t// change instructions\n\t\t\t\t$ (\"#message_area\").text(\"You have defeated all of your opponents! Click 'Restart' to try again...\");\n\t\t\t}\n\n\t\t\t// if player health reaches zero...\n\t\t\tif (playerHealth <= 0) {\n\t\t\t\t\n\t\t\t\t// hide the attack button\n\t\t\t\t$ (\"#attackButton\").hide();\n\n\t\t\t\t// change instructions\n\t\t\t\t$ (\"#message_area\").text(\"You have been defeated. Click 'Restart' to try again...\");\n\t\t\t}\n\n\t\t\tattackNumber += 1; // increments the strength of the player's attack\n\t\t}\n\n\t}); // end of attack button click\n\n\n\t// click on restart button\n\t$(\"#restartButton\").on(\"click\", function() {\n\n\t\tlocation.reload();\n\n\t}); // end of restart button click\n\n}); // end of document.ready",
+			"file": "assets/javascript/game.js",
+			"file_size": 7645,
+			"file_write_time": 131503987572009860,
+			"settings":
+			{
+				"buffer_size": 7460,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/markw/Documents/Coding Boot Camp/Classwork/12-CrystalExample/12.html",
+			"settings":
+			{
+				"buffer_size": 2992,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/style.css",
+			"settings":
+			{
+				"buffer_size": 541,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 588.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 600.0
+	},
+	"console":
+	{
+		"height": 186.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/week-4-game",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/week-4-game/assets",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/week-4-game/assets/images",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/week-4-game/assets/javascript",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/12-CrystalExample"
+	],
+	"file_history":
+	[
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Hangman-Game/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/week-4-game/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/week-4-game/assets/javascript/script.js",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/04-jquery/02-Homework/Instructions/homework_instructions.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/19-Cobweb/Unsolved/cobweb-starter.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/20-jQueryCalculator/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/20-jQueryCalculator/Unsolved/jquery-calculator-starter.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/fridge-solved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/19-Cobweb/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Hangman-Game/test.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Hangman-Game/assets/css/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Hangman-Game/assets/javascript/game.js",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/assets/css/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/22-RPS-Coded/Solved/rps-8.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/31-MyFirstObject/Solved/car-object-solved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/31-MyFirstObject/Unsolved/car-object-unsolved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/31-MyFirstObject/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/27-MyFirstFunctions/Solved/my-first-functions-solved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/27-MyFirstFunctions/Unsolved/my-first-functions-unsolved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/27-MyFirstFunctions/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/26-SuperheroLogging/superhero-logging-solved-with-functions.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/26-SuperheroLogging/superhero-logging-solved-no-functions.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/25-LoopTV/Unsolved/loop-tv-unsolved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/25-LoopTV/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Hangman-Game/Instructions/homework-instructions.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/contact.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Hangman-Game/index.htnl",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Hangman-Game/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/02-Homework/Instructions/homework-instructions.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Bootstrap-Portfolio/assets/css/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Bootstrap-Portfolio/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Bootstrap-Portfolio/contact.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Bootstrap-Portfolio/portfolio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/portfolio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/assets/css/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/20-HardLoop/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/20-HardLoop/Solved/hard-loop.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/20-HardLoop/Solved/myhard-loop.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/18-ZooLoop/Unsolved/zoo-loop-unsolved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/16-ArraySetting/Unsolved/array-setting-unsolved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/15-CoolPeopleArray/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/15-CoolPeopleArray/Unsolved/array-logs-unsolved.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/assets/css/reset.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Bootstrap-Portfolio/Instructions/homework-instructions.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/02-css-bootstrap/01-Activities/16-PanelLayout/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/contact.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/Instructions/homework-instructions.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/07-PromptSushi/Unsolved/prompt-sushi.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/09-ConditionalActivity/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/ConditionalTest2.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/ConditionalTest.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/06-PromptDemo/prompt-demo.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/05-PizzaConsole/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/05-PizzaConsole/Unsolved/pizza-variables-2.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/03-PizzaVariables/Unsolved/pizza-variables.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/03-PizzaVariables/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/03-javascript/01-Activities/01-CodeDissection/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/Instructions/Images/640-index.jpg",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/Instructions/Images/768-index.jpg",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Responsive-Portfolio/Instructions/Images/980-index.jpg",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Bootstrap-Portfolio/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/02-css-bootstrap/02-Homework/Instructions/homework-instructions.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/16-PanelLayout/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/16-PanelLayout/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/16-PanelLayout/panel-layout.png",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/14-TextLayout/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/14-TextLayout/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/MyFirstHTML.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/portfolio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/HW-Wireframe/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/HW-Wireframe/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/HW-Wireframe/style_positioned.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/HW-Wireframe/Instructions/Images/Easier-Layout.png",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/Instructions/recommended-homework-assignment.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/Instructions/Images/Portfolio_Contact.png",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/Instructions/Images/Portfolio_About.png",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/Instructions/Images/Portfolio_Gallery.png",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/HW-Wireframe/index_positioned.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/test.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Basic-Portfolio/Instructions/Images/Easier-Layout.png",
+		"/C/Users/markw/Documents/Coding Boot Camp/Basic-Portfolio/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Basic-Portfolio/Instructions/Images/Portfolio_About.png",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/06-Student Bio/StudentBio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/09-FloatLayout-Activity/Unsolved/floats.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Basic-Portfolio/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Basic-Portfolio/assets/css/reset.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Basic-Portfolio/Instructions/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/09-FloatLayout-Activity/Unsolved/floats.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/09-FloatLayout-Activity/Solved/floats.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/06-Student Bio/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/08-14-2017-NWDT-Class-Repository-FSF/01-Class-Content/01-html-git-css/01-Activities/06-HTML_CSS_Layout/Solved/assets/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/Student Bio/html-bio-with-css.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/Student Bio/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/Student Bio/StudentBio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/Student Bio/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/11-CSS_Positioned_Activity/positioning.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/11-CSS_Positioned_Activity/positioning.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/PREWORK_MAW/Module-9 CSS/style.css",
+		"/C/Users/markw/Documents/Coding Boot Camp/PREWORK_MAW/Module-9 CSS/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/11-CSS_Positioned_Activity/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/09-FloatLayout-Activity/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/07-RelativePaths-Activity/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/07-RelativePaths-Activity/Unsolved/RelativePaths_2/html-bio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/07-RelativePaths-Activity/Unsolved/RelativePaths_3/html-bio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/07-RelativePaths-Activity/Unsolved/RelativePaths_4/HTML/html-bio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/07-RelativePaths-Activity/Unsolved/RelativePaths_1/html-bio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Class notes/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/StudentBio.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/PREWORK_MAW/Module-10 JS/index.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/Examples/easier-homework-assignment.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/Examples/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/nu-coding-bootcamp/first_day.html",
+		"/C/Users/markw/Documents/Coding Boot Camp/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/test-github/README.md",
+		"/C/Users/markw/Documents/Coding Boot Camp/MyFirstHTML.html",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/README.md",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-10/index.html",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-10/javascript.js",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-9/index.html",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-9/style.css",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-8/Blur_FanPage.html",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/My_First_Website.html",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-8/FanPage.html",
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-8/FanPage"
+	],
+	"find":
+	{
+		"height": 60.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"opponent",
+			"alert",
+			"-"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"console.log"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1378,
+								1378
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 669.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "assets/javascript/game.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7297,
+								7297
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2040.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/markw/Documents/Coding Boot Camp/Classwork/12-CrystalExample/12.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2466,
+								2430
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 960.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "assets/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								290,
+								290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "week-4-game.sublime-project",
+	"replace":
+	{
+		"height": 94.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

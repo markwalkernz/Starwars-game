@@ -1,0 +1,36 @@
+/* Coding boot camp week 4 homework. Star Wars RPG game. */
+
+body {
+	background: url("../images/throne-room.jpg") no-repeat center center fixed;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #ffffff;
+}
+
+header {
+	padding: 20px;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+.gameCharacter, .player, .opponent {
+	float: left;
+	padding:5px;
+	margin: 10px;
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+	font-size: 0.75em;
+}
+
+.headshot {
+	width: 100px;
+	padding: 5px;
+	display: block;
+	margin: auto;
+}
+
+ #button_area {
+	margin:auto;
+}
