@@ -23,18 +23,13 @@
 
 	<header>
 		<div class="page-header">
-			<h1>STAR WARS: THE GAME</h1>
-			<p>The Emperor of The Republic has pitted the most powerful warriors in the Galaxy against each other!</p>
+			<h1>STAR WARS: A GAME OF THRONES</h1>
+			<p>The Emperor of The Republic is dead and the most powerful warriors in the Galaxy are fighting for the throne!</p>
 		</div>
 
 	</header>
 
 	<div class="container">
-
-		<!-- message row -->
-		<div class="row">
-			<div class="col-md-12" id="message_area">Choose your character...</div>
-		</div>
 
 		<!-- character area -->
 		<div class="row">
@@ -42,19 +37,33 @@
 				
 			</div>
 		</div>
-
 		
-		<div class="row">
+		<div class="row game_area">
 
 			<!-- player area -->
 			<div class = "col-md-4" id="player_area">
 				<p>Player</p>
 			</div>
 
-			<!-- button area -->
-			<div class = "col-md-4" id="button_area">
-				<button type="button" class="btn-danger" id="restartButton">Restart</button>
-				<button type="button" class="btn-default" id="attackButton">Attack</button>
+			<!-- button and message area -->
+			<div class = "col-md-4">
+
+				<!-- message row -->
+				<div class="row">
+					<div class="col-md-12" id="message_area">Choose your character...</div>
+				</div>
+
+				<div class="row" id="button_area">
+					<div class="col-md-12">
+						<button type="button" class="btn-danger" id="restartButton">Restart</button>
+						<button type="button" class="btn-default" id="attackButton">Attack</button>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class = "col-md-12" id="attack_messages">
+					</div>
+				</div>
 
 			</div>
 
@@ -65,9 +74,7 @@
 		</div>
 
 		<div class="row">
-			<div class = "col-md-12" id="attack_messages">
-				
-			</div>
+
 		</div>
 
 	</div>	

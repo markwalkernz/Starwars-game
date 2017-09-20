@@ -13,10 +13,10 @@ var defenderHealth = 0;
 var attackNumber = 1;
 
 // character details
-var luke = {id: "luke", name: "Luke Skywalker", healthPoints: 100, attackPower: 8, counterAttackPower: 5, image:"luke.jpg", headshot:"lukeHead.jpg"};
-var leia = {id: "leia", name: "Princess Leia", healthPoints: 120, attackPower: 6, counterAttackPower: 10, image:"leia.jpg", headshot:"leiaHead.jpg"};
-var boba = {id: "boba", name: "Boba Fett", healthPoints: 150, attackPower: 10, counterAttackPower: 15, image:"boba.jpg", headshot:"bobaHead.jpg"};
-var vader = {id: "vader", name: "Darth Vader", healthPoints: 180, attackPower: 12, counterAttackPower: 25, image:"vader.jpg", headshot:"vaderHead.jpg"};
+var luke = {id: "luke", name: "Luke Skywalker", healthPoints: 120, attackPower: 20, counterAttackPower: 12, image:"luke.jpg", headshot:"lukeHead.jpg"};
+var leia = {id: "leia", name: "Princess Leia", healthPoints: 130, attackPower: 15, counterAttackPower: 10, image:"leia.jpg", headshot:"leiaHead.jpg"};
+var boba = {id: "boba", name: "Boba Fett", healthPoints: 140, attackPower: 10, counterAttackPower: 15, image:"boba.jpg", headshot:"bobaHead.jpg"};
+var vader = {id: "vader", name: "Darth Vader", healthPoints: 150, attackPower: 12, counterAttackPower: 20, image:"vader.jpg", headshot:"vaderHead.jpg"};
 
 // TODO: calculate number of opponents rather than a fixed number. Will need to put characters in an array?
 var numberOpponents = 3;
@@ -69,6 +69,23 @@ function createCharacter(item, targetArea) {
 } //end of createCharacter function
 
 
+function gameOver(message) {
+
+	// this function prevents the user from clicking anything but the restart button
+
+	// hide the attack button
+	$ ("#attackButton").hide();
+
+	// set playerSelected and defenderSelected to true to prevent characters being clicked.
+	playerSelected = true;
+	defenderSelected = true;
+
+	// change instructions
+	$ ("#message_area").text(message);	
+
+} //end of gameOver function
+
+
 
 // run the following after the document has loaded
 $(document).ready(function(){
@@ -90,7 +107,8 @@ $(document).ready(function(){
 			characterID = "#" + $ (this).attr("id");
 			healthID = characterID + "Health";
 
-			// change the id of the character that has been clicked to "player"
+			// change the class of the character that has been clicked to "player" and the id to "player"
+			$ (characterID).attr("class", "player");
 			$ (characterID).attr("id", "player");
 
 			// change the id of the span where the character's health is shown to "playerHealth"
@@ -116,7 +134,8 @@ $(document).ready(function(){
 			characterID = "#" + $ (this).attr("id");
 			healthID = characterID + "Health";
 
-			// change the id of the character that has been clicked to "defender"
+			// change the class of the character that has been clicked to "defender" and the id to "defender"
+			$ (characterID).attr("class", "defender");
 			$ (characterID).attr("id", "defender");
 
 			// change the id of the span where the character's health is shown to "defenderHealth"
@@ -168,6 +187,7 @@ $(document).ready(function(){
 			$ ("#playerHealth").text(playerHealth);
 			$ ("#defenderHealth").text(defenderHealth);
 
+
 			// if defender health reaches zero...
 			if (defenderHealth <= 0) {
 
@@ -185,24 +205,20 @@ $(document).ready(function(){
 				$ ("#message_area").text("You are victorious! Choose a new opponent...");
 			}
 
+
 			// if all opponents have been defeated...
 			if (numberOpponents === 0) {
 
-				// hide the attack button
-				$ ("#attackButton").hide();
-
-				// change instructions
-				$ ("#message_area").text("You have defeated all of your opponents! Click 'Restart' to try again...");
+				// call the gameOver function
+				gameOver("You have defeated all of your opponents! Click 'Restart' to try again...");
 			}
+
 
 			// if player health reaches zero...
 			if (playerHealth <= 0) {
-				
-				// hide the attack button
-				$ ("#attackButton").hide();
 
-				// change instructions
-				$ ("#message_area").text("You have been defeated. Click 'Restart' to try again...");
+				// call the gameOver function
+				gameOver("You have been defeated. Click 'Restart' to try again...");
 			}
 
 			attackNumber += 1; // increments the strength of the player's attack
@@ -210,10 +226,12 @@ $(document).ready(function(){
 
 	}); // end of attack button click
 
+
 	// click on restart button
 	$("#restartButton").on("click", function() {
 
 		location.reload();
-	});
+
+	}); // end of restart button click
 
 }); // end of document.ready

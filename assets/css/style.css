@@ -14,7 +14,17 @@ h1 {
 	font-weight: bold;
 }
 
-.gameCharacter, .player, .opponent {
+.game_area {
+	padding-top: 20px;
+}
+
+#message_area, #button_area, #attack_messages {
+	min-height: 70px;
+	padding-bottom: 20px;
+}
+
+.gameCharacter, .player, .defender {
+	min-width: 130px;
 	float: left;
 	padding:5px;
 	margin: 10px;
@@ -24,13 +34,17 @@ h1 {
 	font-size: 0.75em;
 }
 
+.player {
+	background-color: #00ff00;
+}
+
+.defender {
+	background-color: #ff0000;
+}
+
 .headshot {
 	width: 100px;
 	padding: 5px;
 	display: block;
 	margin: auto;
-}
-
- #button_area {
-	margin:auto;
 }
