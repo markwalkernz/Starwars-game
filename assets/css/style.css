@@ -1,13 +1,15 @@
 /* Coding boot camp week 4 homework. Star Wars RPG game. */
 
 body {
-	background: url("../images/throne-room.jpg") no-repeat center center fixed;
+	background: url("../images/throne-room.jpg") no-repeat center fixed;
 	font-family: Verdana, Geneva, sans-serif;
 	color: #ffffff;
 }
 
 header {
-	padding: 20px;
+	background-color: #000000;
+	padding: 5px 30px;
+
 }
 
 h1 {
@@ -15,20 +17,23 @@ h1 {
 }
 
 .container {
-	padding-top: 20px;
+	margin-top: 10px;
+	padding-top: 10px;
 	background-color: #000000;
 	opacity: 0.8;
 }
 
-#message_area, #button_area, #attack_messages {
-	min-height: 70px;
-	padding-bottom: 20px;
+#message_area, #attack_messages {
+	min-height: 110px;
+}
 
+#character_area {
+	min-height: 190px;
+	padding-bottom: 20px;
 }
 
 .gameCharacter, .player, .defender {
-	min-width: 130px;
-	float: left;
+	width: 130px;
 	padding:5px;
 	margin: 10px;
 	background-color: #ffffff;

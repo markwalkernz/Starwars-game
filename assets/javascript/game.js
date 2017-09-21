@@ -1,28 +1,29 @@
 // Coding boot camp week 4 homework. Star Wars RPG game.
 
 // initialise variables
-var imagePath = "assets/images/";
-var arrayCharacters = ["luke", "leia", "boba", "vader"];
+var imagePath = "assets/images/";		//this is the path to the images folder
 
-var playerSelected = false;
-var defenderSelected = false;
+var playerSelected = false;				//no player character selected
+var defenderSelected = false;			//no defender character selected
 
-var playerHealth = 0;
-var defenderHealth = 0;
+var playerHealth = 0;					//player's current health points
+var defenderHealth = 0;					//defender's current health points
 
-var attackNumber = 1;
+var attackNumber = 1;					//how many attacks the player has made, used to increase player attack strength incrementally
 
-// character details
-var luke = {id: "luke", name: "Luke Skywalker", healthPoints: 120, attackPower: 20, counterAttackPower: 12, image:"luke.jpg", headshot:"lukeHead.jpg"};
-var leia = {id: "leia", name: "Princess Leia", healthPoints: 130, attackPower: 15, counterAttackPower: 10, image:"leia.jpg", headshot:"leiaHead.jpg"};
-var boba = {id: "boba", name: "Boba Fett", healthPoints: 140, attackPower: 10, counterAttackPower: 15, image:"boba.jpg", headshot:"bobaHead.jpg"};
-var vader = {id: "vader", name: "Darth Vader", healthPoints: 150, attackPower: 12, counterAttackPower: 20, image:"vader.jpg", headshot:"vaderHead.jpg"};
+// character details in an array
+var characters = [
+	{id: "luke", name: "Luke Skywalker", healthPoints: 120, attackPower: 20, counterAttackPower: 12, headshot:"lukeHead.jpg"},
+	{id: "leia", name: "Princess Leia", healthPoints: 130, attackPower: 15, counterAttackPower: 10, headshot:"leiaHead.jpg"},
+	{id: "boba", name: "Boba Fett", healthPoints: 140, attackPower: 10, counterAttackPower: 15, headshot:"bobaHead.jpg"},
+	{id: "vader", name: "Darth Vader", healthPoints: 150, attackPower: 12, counterAttackPower: 20, headshot:"vaderHead.jpg"}
+]
 
-// TODO: calculate number of opponents rather than a fixed number. Will need to put characters in an array?
-var numberOpponents = 3;
+// number of opponents is the total number of characters, minus one player character
+var numberOpponents = characters.length - 1;
 
 // attack button is initially hidden
-	$ ("#attackButton").hide();
+$ ("#attackButton").hide();
 
 
 // declare functions
@@ -31,40 +32,44 @@ function createCharacter(item, targetArea) {
 	// This function creates a div for a character, with an image and statistics.
 
 	// variables
-	var characterSource = imagePath + item.headshot;			// this is the path of the image for the character
-	var characterID = "#" + item.id
-	var healthID = item.id + "Health";							// the unique id for the character with "Health" on the end becomes the id for health points 
+	var imageSource = imagePath + item.headshot;				// this is the path of the image for the character
+	var healthID = item.id + "Health";							// the id for the character with "Health" on the end becomes the id for healthPointsSpan 
 
 	// create div for the character
 	var characterContainer	= $("<div>");
-		characterContainer.attr("class", "gameCharacter");		// All character divs have a class of "gameCharacter".
-		characterContainer.attr("id", item.id);					// the id for the div is the id retrieved from the character object
+
+		// All character divs have a class of "gameCharacter".
+		characterContainer.attr("class", "gameCharacter");	
+
+		// the properties for the div are the properties retrieved from the character object	
+		characterContainer.attr("id", item.id);					
 		characterContainer.attr("healthPoints", item.healthPoints);
 		characterContainer.attr("attackPower", item.attackPower);
 		characterContainer.attr("counterAttackPower", item.counterAttackPower);
 
-	// add the character's name to the div as text
-	characterContainer.text(item.name);
+		// add the character's name to the div as text
+		characterContainer.text(item.name);
 
-	// display the character in the correct area of the page
+		// add image to character div
+		var characterImage = $("<img>");
+			characterImage.attr("class", "headshot");			// the image for the character has the class of "headshot"
+			characterImage.attr("src", imageSource);			// imageSource is the image path that is calculated at the beginning of this function
+			characterImage.attr("alt", item.name);
+
+		$ (characterContainer).append(characterImage);
+
+
+		// add a span to the character div to show health points 
+		var healthPointsSpan = $("<span>");
+			healthPointsSpan.attr("id", healthID);
+
+		healthPointsSpan.text(item.healthPoints);
+
+		$ (characterContainer).append("Health Points: ");
+		$ (characterContainer).append(healthPointsSpan);
+
+	// display the character div in the specified area of the page
 	$ (targetArea).append(characterContainer);
-
-	// add image to character div
-	var characterImage = $("<img>");
-		characterImage.attr("class", "headshot");				// the image for the character has the class of "headshot"
-		characterImage.attr("src", characterSource);
-		characterImage.attr("alt", item.name);
-
-	$ (characterContainer).append(characterImage);
-
-	// show healthPoints in a span in the character div 
-	var healthPointsSpan = $("<span>");
-		healthPointsSpan.attr("id", healthID);
-
-	healthPointsSpan.text(item.healthPoints);
-
-	$ (characterContainer).append("Health Points: ");
-	$ (characterContainer).append(healthPointsSpan);
 
 } //end of createCharacter function
 
@@ -76,12 +81,12 @@ function gameOver(message) {
 	// hide the attack button
 	$ ("#attackButton").hide();
 
-	// set playerSelected and defenderSelected to true to prevent characters being clicked.
+	// set playerSelected and defenderSelected to true to prevent characters being clicked
 	playerSelected = true;
 	defenderSelected = true;
 
-	// change instructions
-	$ ("#message_area").text(message);	
+	// change player instructions based on the message passed to this function as an argument
+	$ ("#message_area").html(message);	
 
 } //end of gameOver function
 
@@ -91,11 +96,9 @@ function gameOver(message) {
 $(document).ready(function(){
 
 	// place character images in character area
-	createCharacter(luke, character_area);
-	createCharacter(leia, character_area);
-	createCharacter(boba, character_area);
-	createCharacter(vader, character_area);
-
+	for (var i = 0; i < characters.length; i++) {
+		createCharacter(characters[i], character_area);
+	}
 
 	// click on a character
 	$(".gameCharacter").on("click", function() {
@@ -124,7 +127,7 @@ $(document).ready(function(){
 			playerSelected = true;
 
 			// change instructions
-			$ ("#message_area").text("Choose your first opponent ...");
+			$ ("#message_area").html("<p>Choose your first opponent ...</p>");
 
 		}
 
@@ -153,7 +156,7 @@ $(document).ready(function(){
 			defenderSelected = true;
 
 			// change instructions
-			$ ("#message_area").text("Click the attack button...");
+			$ ("#message_area").html("<p>Click the attack button...</p>");
 
 		} 
 
@@ -180,8 +183,8 @@ $(document).ready(function(){
 			playerHealth -= counterAttackDamage;
 
 			// show attack results on screen
-			$ ("#attack_messages").text("You attacked for " + attackDamage + " damage.");			
-			$ ("#attack_messages").append("Defender counter attacked for " + counterAttackDamage + " damage.");
+			$ ("#attack_messages").html("<p>You attacked for " + attackDamage + " damage.</p>");			
+			$ ("#attack_messages").append("<p>Defender counter-attacked for " + counterAttackDamage + " damage.</p>");
 
 			// show player and defender remaining health on screen
 			$ ("#playerHealth").text(playerHealth);
@@ -202,7 +205,7 @@ $(document).ready(function(){
 				$ ("#attackButton").hide();
 
 				// change instructions
-				$ ("#message_area").text("You are victorious! Choose a new opponent...");
+				$ ("#message_area").html("<p>You are victorious!</p><p>Choose a new opponent...</p>");
 			}
 
 
@@ -210,7 +213,7 @@ $(document).ready(function(){
 			if (numberOpponents === 0) {
 
 				// call the gameOver function
-				gameOver("You have defeated all of your opponents! Click 'Restart' to try again...");
+				gameOver("<p>You have defeated all of your opponents!</p><p>Click 'Restart' to try again...<p>");
 			}
 
 
@@ -218,7 +221,7 @@ $(document).ready(function(){
 			if (playerHealth <= 0) {
 
 				// call the gameOver function
-				gameOver("You have been defeated. Click 'Restart' to try again...");
+				gameOver("<p>You have been defeated.</p><p>Click 'Restart' to try again...</p>");
 			}
 
 			attackNumber += 1; // increments the strength of the player's attack
