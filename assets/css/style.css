@@ -23,13 +23,21 @@ h1 {
 	opacity: 0.8;
 }
 
-#message_area, #attack_messages {
-	min-height: 110px;
-}
-
 #character_area {
 	min-height: 190px;
 	padding-bottom: 20px;
+}
+
+#message_area, #attack_messages {
+	min-height: 80px;
+}
+
+#attack_messages {
+	font-size: 0.75em;
+}
+
+#button_area {
+	padding-bottom: 10px;
 }
 
 .gameCharacter, .player, .defender {

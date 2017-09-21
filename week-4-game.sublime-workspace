@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"charac",
+				"characterID"
+			],
+			[
+				"attack",
+				"attackMessage"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"char",
+				"characters"
+			],
+			[
+				"create",
+				"createCharacter"
+			],
+			[
 				"padding",
 				"padding-top"
 			],
@@ -22,10 +46,6 @@
 			[
 				"pla",
 				"playerSelected"
-			],
-			[
-				"attack",
-				"attackButton"
 			],
 			[
 				"a",
@@ -50,10 +70,6 @@
 			[
 				"health",
 				"healthID"
-			],
-			[
-				"char",
-				"characterID"
 			],
 			[
 				"oppent",
@@ -150,10 +166,6 @@
 			[
 				"al",
 				"align-self"
-			],
-			[
-				"margin",
-				"margin-top"
 			],
 			[
 				"to",
@@ -272,10 +284,6 @@
 				"margin-top"
 			],
 			[
-				"paddin",
-				"padding-top"
-			],
-			[
 				"BACKGROUND",
 				"background-color"
 			],
@@ -327,7 +335,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1990,
+				"buffer_size": 2012,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -336,24 +344,16 @@
 			"file": "assets/javascript/game.js",
 			"settings":
 			{
-				"buffer_size": 7865,
+				"buffer_size": 8284,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/markw/Documents/Coding Boot Camp/Classwork/12-CrystalExample/12.html",
-			"settings":
-			{
-				"buffer_size": 2992,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "assets/css/style.css",
 			"settings":
 			{
-				"buffer_size": 784,
+				"buffer_size": 838,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -412,6 +412,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/markw/Documents/Coding Boot Camp/Classwork/12-CrystalExample/12.html",
 		"/C/Users/markw/Documents/Coding Boot Camp/Repos/Hangman-Game/index.html",
 		"/C/Users/markw/Documents/Coding Boot Camp/Repos/week-4-game/README.md",
 		"/C/Users/markw/Documents/Coding Boot Camp/Repos/week-4-game/assets/javascript/script.js",
@@ -538,8 +539,7 @@
 		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-9/style.css",
 		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-8/Blur_FanPage.html",
 		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/My_First_Website.html",
-		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-8/FanPage.html",
-		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-8/FanPage"
+		"/C/Users/markw/OneDrive/Documents/Coding Boot Camp/PREWORK_MAW/Module-8/FanPage.html"
 	],
 	"find":
 	{
@@ -578,7 +578,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -587,15 +587,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1990,
+						"buffer_size": 2012,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1188,
-								1188
+								931,
+								931
 							]
 						],
 						"settings":
@@ -604,10 +604,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 480.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -616,15 +616,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7865,
+						"buffer_size": 8284,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7688,
-								7694
+								6337,
+								6337
 							]
 						],
 						"settings":
@@ -633,57 +633,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4016.0,
+						"translation.y": 3180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/C/Users/markw/Documents/Coding Boot Camp/Classwork/12-CrystalExample/12.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2992,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2466,
-								2430
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 960.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "assets/css/style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 784,
+						"buffer_size": 838,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								563,
-								563
+								237,
+								237
 							]
 						],
 						"settings":
@@ -692,10 +662,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 240.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

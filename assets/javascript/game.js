@@ -6,12 +6,15 @@ var imagePath = "assets/images/";		//this is the path to the images folder
 var playerSelected = false;				//no player character selected
 var defenderSelected = false;			//no defender character selected
 
+var playerName = "";					//player character's name
+var defenderName = "";					//defender character's name
+
 var playerHealth = 0;					//player's current health points
 var defenderHealth = 0;					//defender's current health points
 
 var attackNumber = 1;					//how many attacks the player has made, used to increase player attack strength incrementally
 
-// character details in an array
+// character details in an array of objects
 var characters = [
 	{id: "luke", name: "Luke Skywalker", healthPoints: 120, attackPower: 20, counterAttackPower: 12, headshot:"lukeHead.jpg"},
 	{id: "leia", name: "Princess Leia", healthPoints: 130, attackPower: 15, counterAttackPower: 10, headshot:"leiaHead.jpg"},
@@ -27,22 +30,21 @@ $ ("#attackButton").hide();
 
 
 // declare functions
+
+
 function createCharacter(item, targetArea) {
 
 	// This function creates a div for a character, with an image and statistics.
 
-	// variables
-	var imageSource = imagePath + item.headshot;				// this is the path of the image for the character
-	var healthID = item.id + "Health";							// the id for the character with "Health" on the end becomes the id for healthPointsSpan 
-
 	// create div for the character
 	var characterContainer	= $("<div>");
 
-		// All character divs have a class of "gameCharacter".
+		// all character divs have a class of "gameCharacter".
 		characterContainer.attr("class", "gameCharacter");	
 
 		// the properties for the div are the properties retrieved from the character object	
-		characterContainer.attr("id", item.id);					
+		characterContainer.attr("id", item.id);
+		characterContainer.attr("name", item.name);			
 		characterContainer.attr("healthPoints", item.healthPoints);
 		characterContainer.attr("attackPower", item.attackPower);
 		characterContainer.attr("counterAttackPower", item.counterAttackPower);
@@ -52,8 +54,8 @@ function createCharacter(item, targetArea) {
 
 		// add image to character div
 		var characterImage = $("<img>");
-			characterImage.attr("class", "headshot");			// the image for the character has the class of "headshot"
-			characterImage.attr("src", imageSource);			// imageSource is the image path that is calculated at the beginning of this function
+			characterImage.attr("class", "headshot");				// the image for the character has the class of "headshot"
+			characterImage.attr("src", imagePath + item.headshot);	// the path of the image folder plus the headshot file name 
 			characterImage.attr("alt", item.name);
 
 		$ (characterContainer).append(characterImage);
@@ -61,7 +63,7 @@ function createCharacter(item, targetArea) {
 
 		// add a span to the character div to show health points 
 		var healthPointsSpan = $("<span>");
-			healthPointsSpan.attr("id", healthID);
+			healthPointsSpan.attr("id", item.id + "Health");	// the id for healthPointsSpan is the character id with "Health" on the end 
 
 		healthPointsSpan.text(item.healthPoints);
 
@@ -93,9 +95,9 @@ function gameOver(message) {
 
 
 // run the following after the document has loaded
-$(document).ready(function(){
+$(document).ready(function() {
 
-	// place character images in character area
+	// run through the array of character objects and create divs in the character area
 	for (var i = 0; i < characters.length; i++) {
 		createCharacter(characters[i], character_area);
 	}
@@ -106,8 +108,9 @@ $(document).ready(function(){
 		// if no player character has been selected, choose this character as the player
 		if (playerSelected == false) {
 
-			// identify the current id of the character selected, and the span where the character's health is shown
+			// store the current id of the character selected, the character's name and the span where the character's health is shown
 			characterID = "#" + $ (this).attr("id");
+			playerName = $ (this).attr("name");
 			healthID = characterID + "Health";
 
 			// change the class of the character that has been clicked to "player" and the id to "player"
@@ -128,35 +131,43 @@ $(document).ready(function(){
 
 			// change instructions
 			$ ("#message_area").html("<p>Choose your first opponent ...</p>");
-
 		}
 
+		// if a player has been selected, but no defender, choose this character as the defender
 		else if (defenderSelected == false) {
 
-			// identify the current id of the character selected, and the span where the character's health is shown
+			// store the id of the character selected
 			characterID = "#" + $ (this).attr("id");
-			healthID = characterID + "Health";
 
-			// change the class of the character that has been clicked to "defender" and the id to "defender"
-			$ (characterID).attr("class", "defender");
-			$ (characterID).attr("id", "defender");
+			// make sure that this character has not already been chosen as the player
+			if (characterID !== "#player") {
 
-			// change the id of the span where the character's health is shown to "defenderHealth"
-			$ (healthID).attr("id", "defenderHealth");
+				// store the character's name and the span where the character's health is shown
+				defenderName = $ (this).attr("name");
+				healthID = characterID + "Health";
 
-			// character's health points becomes the defender's starting health
-			defenderHealth = $ ("#defender").attr("healthPoints");
+				// change the class of the character that has been clicked to "defender" and the id to "defender"
+				$ (characterID).attr("class", "defender");
+				$ (characterID).attr("id", "defender");
 
-			// move defender to defender area
-			$ ("#defender").appendTo("#defender_area");
+				// change the id of the span where the character's health is shown to "defenderHealth"
+				$ (healthID).attr("id", "defenderHealth");
 
-			// show the attack button
-			$ ("#attackButton").show();
+				// character's health points becomes the defender's starting health
+				defenderHealth = $ ("#defender").attr("healthPoints");
 
-			defenderSelected = true;
+				// move defender to defender area
+				$ ("#defender").appendTo("#defender_area");
 
-			// change instructions
-			$ ("#message_area").html("<p>Click the attack button...</p>");
+				// show the attack button
+				$ ("#attackButton").show();
+
+				// record that a defender has been selected
+				defenderSelected = true;
+
+				// change instructions
+				$ ("#message_area").html("<p>Click the attack button...</p>");
+			}
 
 		} 
 
@@ -166,12 +177,10 @@ $(document).ready(function(){
 	// click on attack button
 	$("#attackButton").on("click", function() {
 
-		// attack button is only active if player and defender have been selected and player and defender health are greater than zero
-		if (playerSelected == true && defenderSelected == true && playerHealth > 0 && defenderHealth > 0) {
+		// note: attack button is hidden until player and defender have been chosen
 
 			// get player's attack power and multiply it by the number of attacks that have been made
-			var playerAttackPower = $ ("#player").attr("attackPower");
-			var attackDamage = playerAttackPower * attackNumber;
+			var attackDamage = $ ("#player").attr("attackPower") * attackNumber;
 
 			// reduce defender's health
 			defenderHealth -= attackDamage;	
@@ -183,8 +192,8 @@ $(document).ready(function(){
 			playerHealth -= counterAttackDamage;
 
 			// show attack results on screen
-			$ ("#attack_messages").html("<p>You attacked for " + attackDamage + " damage.</p>");			
-			$ ("#attack_messages").append("<p>Defender counter-attacked for " + counterAttackDamage + " damage.</p>");
+			$ ("#attack_messages").html("<p>" + playerName + " attacked for " + attackDamage + " damage.</p>");			
+			$ ("#attack_messages").append("<p>" + defenderName + " counter-attacked for " + counterAttackDamage + " damage.</p>");
 
 			// show player and defender remaining health on screen
 			$ ("#playerHealth").text(playerHealth);
@@ -225,7 +234,6 @@ $(document).ready(function(){
 			}
 
 			attackNumber += 1; // increments the strength of the player's attack
-		}
 
 	}); // end of attack button click
 
