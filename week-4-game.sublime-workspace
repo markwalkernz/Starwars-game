@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"defene",
+				"defenderSelected"
+			],
+			[
+				"player",
+				"playerSelected"
+			],
+			[
+				"pla",
+				"playerSelected"
+			],
+			[
 				"attack",
 				"attackButton"
 			],
@@ -26,10 +46,6 @@
 			[
 				"defe",
 				"defenderHealth"
-			],
-			[
-				"player",
-				"playerHealth"
 			],
 			[
 				"health",
@@ -228,10 +244,6 @@
 				"margin-left"
 			],
 			[
-				"padding",
-				"padding-left"
-			],
-			[
 				"con",
 				"container-fluid"
 			],
@@ -315,19 +327,16 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1819,
+				"buffer_size": 1990,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "// Coding boot camp week 4 homework. Star Wars RPG game.\n\n// initialise variables\nvar imagePath = \"assets/images/\";\nvar arrayCharacters = [\"luke\", \"leia\", \"boba\", \"vader\"];\n\nvar playerSelected = false;\nvar defenderSelected = false;\n\nvar playerHealth = 0;\nvar defenderHealth = 0;\n\nvar attackNumber = 1;\n\n// character details\nvar luke = {id: \"luke\", name: \"Luke Skywalker\", healthPoints: 100, attackPower: 8, counterAttackPower: 5, image:\"luke.jpg\", headshot:\"lukeHead.jpg\"};\nvar leia = {id: \"leia\", name: \"Princess Leia\", healthPoints: 120, attackPower: 6, counterAttackPower: 10, image:\"leia.jpg\", headshot:\"leiaHead.jpg\"};\nvar boba = {id: \"boba\", name: \"Boba Fett\", healthPoints: 150, attackPower: 10, counterAttackPower: 15, image:\"boba.jpg\", headshot:\"bobaHead.jpg\"};\nvar vader = {id: \"vader\", name: \"Darth Vader\", healthPoints: 180, attackPower: 12, counterAttackPower: 25, image:\"vader.jpg\", headshot:\"vaderHead.jpg\"};\n\n// TODO: calculate number of opponents rather than a fixed number. Will need to put characters in an array?\nvar numberOpponents = 3;\n\n// attack button is initially hidden\n\t$ (\"#attackButton\").hide();\n\n\n// declare functions\nfunction createCharacter(item, targetArea) {\n\n\t// This function creates a div for a character, with an image and statistics.\n\n\t// variables\n\tvar characterSource = imagePath + item.headshot;\t\t\t// this is the path of the image for the character\n\tvar characterID = \"#\" + item.id\n\tvar healthID = item.id + \"Health\";\t\t\t\t\t\t\t// the unique id for the character with \"Health\" on the end becomes the id for health points \n\n\t// create div for the character\n\tvar characterContainer\t= $(\"<div>\");\n\t\tcharacterContainer.attr(\"class\", \"gameCharacter\");\t\t// All character divs have a class of \"gameCharacter\".\n\t\tcharacterContainer.attr(\"id\", item.id);\t\t\t\t\t// the id for the div is the id retrieved from the character object\n\t\tcharacterContainer.attr(\"healthPoints\", item.healthPoints);\n\t\tcharacterContainer.attr(\"attackPower\", item.attackPower);\n\t\tcharacterContainer.attr(\"counterAttackPower\", item.counterAttackPower);\n\n\t// add the character's name to the div as text\n\tcharacterContainer.text(item.name);\n\n\t// display the character in the correct area of the page\n\t$ (targetArea).append(characterContainer);\n\n\t// add image to character div\n\tvar characterImage = $(\"<img>\");\n\t\tcharacterImage.attr(\"class\", \"headshot\");\t\t\t\t// the image for the character has the class of \"headshot\"\n\t\tcharacterImage.attr(\"src\", characterSource);\n\t\tcharacterImage.attr(\"alt\", item.name);\n\n\t$ (characterContainer).append(characterImage);\n\n\t// show healthPoints in a span in the character div \n\tvar healthPointsSpan = $(\"<span>\");\n\t\thealthPointsSpan.attr(\"id\", healthID);\n\n\thealthPointsSpan.text(item.healthPoints);\n\n\t$ (characterContainer).append(\"Health Points: \");\n\t$ (characterContainer).append(healthPointsSpan);\n\n} //end of createCharacter function\n\n\n\n// run the following after the document has loaded\n$(document).ready(function(){\n\n\t// place character images in character area\n\tcreateCharacter(luke, character_area);\n\tcreateCharacter(leia, character_area);\n\tcreateCharacter(boba, character_area);\n\tcreateCharacter(vader, character_area);\n\n\n\t// click on a character\n\t$(\".gameCharacter\").on(\"click\", function() {\n\n\t\t// if no player character has been selected, choose this character as the player\n\t\tif (playerSelected == false) {\n\n\t\t\t// identify the current id of the character selected, and the span where the character's health is shown\n\t\t\tcharacterID = \"#\" + $ (this).attr(\"id\");\n\t\t\thealthID = characterID + \"Health\";\n\n\t\t\t// change the id of the character that has been clicked to \"player\"\n\t\t\t$ (characterID).attr(\"id\", \"player\");\n\n\t\t\t// change the id of the span where the character's health is shown to \"playerHealth\"\n\t\t\t$ (healthID).attr(\"id\", \"playerHealth\");\n\n\t\t\t// character's health points becomes the player's starting health\n\t\t\tplayerHealth = $ (\"#player\").attr(\"healthPoints\");\n\n\t\t\t// move player to player area\n\t\t\t$ (\"#player\").appendTo(\"#player_area\");\n\n\t\t\t// record that a player has been selected\n\t\t\tplayerSelected = true;\n\n\t\t\t// change instructions\n\t\t\t$ (\"#message_area\").text(\"Choose your first opponent ...\");\n\n\t\t}\n\n\t\telse if (defenderSelected == false) {\n\n\t\t\t// identify the current id of the character selected, and the span where the character's health is shown\n\t\t\tcharacterID = \"#\" + $ (this).attr(\"id\");\n\t\t\thealthID = characterID + \"Health\";\n\n\t\t\t// change the id of the character that has been clicked to \"defender\"\n\t\t\t$ (characterID).attr(\"id\", \"defender\");\n\n\t\t\t// change the id of the span where the character's health is shown to \"defenderHealth\"\n\t\t\t$ (healthID).attr(\"id\", \"defenderHealth\");\n\n\t\t\t// character's health points becomes the defender's starting health\n\t\t\tdefenderHealth = $ (\"#defender\").attr(\"healthPoints\");\n\n\t\t\t// move defender to defender area\n\t\t\t$ (\"#defender\").appendTo(\"#defender_area\");\n\n\t\t\t// show the attack button\n\t\t\t$ (\"#attackButton\").show();\n\n\t\t\tdefenderSelected = true;\n\n\t\t\t// change instructions\n\t\t\t$ (\"#message_area\").text(\"Click the attack button...\");\n\n\t\t} \n\n\t});\t//end of character click\n\n\n\t// click on attack button\n\t$(\"#attackButton\").on(\"click\", function() {\n\n\t\t// attack button is only active if player and defender have been selected and player and defender health are greater than zero\n\t\tif (playerSelected == true && defenderSelected == true && playerHealth > 0 && defenderHealth > 0) {\n\n\t\t\t// get player's attack power and multiply it by the number of attacks that have been made\n\t\t\tvar playerAttackPower = $ (\"#player\").attr(\"attackPower\");\n\t\t\tvar attackDamage = playerAttackPower * attackNumber;\n\n\t\t\t// reduce defender's health\n\t\t\tdefenderHealth -= attackDamage;\t\n\n\t\t\t// get defender's counter attack power\n\t\t\tvar counterAttackDamage = $ (\"#defender\").attr(\"counterAttackPower\");\n\n\t\t\t// reduce player's health\n\t\t\tplayerHealth -= counterAttackDamage;\n\n\t\t\t// show attack results on screen\n\t\t\t$ (\"#attack_messages\").text(\"You attacked for \" + attackDamage + \" damage.\");\t\t\t\n\t\t\t$ (\"#attack_messages\").append(\"Defender counter attacked for \" + counterAttackDamage + \" damage.\");\n\n\t\t\t// show player and defender remaining health on screen\n\t\t\t$ (\"#playerHealth\").text(playerHealth);\n\t\t\t$ (\"#defenderHealth\").text(defenderHealth);\n\n\t\t\t// if defender health reaches zero...\n\t\t\tif (defenderHealth <= 0) {\n\n\t\t\t\t// reduce number of opponents by one\n\t\t\t\tnumberOpponents -= 1;\n\n\t\t\t\t// delete defender div and set defenderSelected to false\n\t\t\t\t$ (\"#defender\").remove();\n\t\t\t\tdefenderSelected = false;\n\n\t\t\t\t// hide the attack button\n\t\t\t\t$ (\"#attackButton\").hide();\n\n\t\t\t\t// change instructions\n\t\t\t\t$ (\"#message_area\").text(\"You are victorious! Choose a new opponent...\");\n\t\t\t}\n\n\t\t\t// if all opponents have been defeated...\n\t\t\tif (numberOpponents === 0) {\n\n\t\t\t\t// hide the attack button\n\t\t\t\t$ (\"#attackButton\").hide();\n\n\t\t\t\t// change instructions\n\t\t\t\t$ (\"#message_area\").text(\"You have defeated all of your opponents! Click 'Restart' to try again...\");\n\t\t\t}\n\n\t\t\t// if player health reaches zero...\n\t\t\tif (playerHealth <= 0) {\n\t\t\t\t\n\t\t\t\t// hide the attack button\n\t\t\t\t$ (\"#attackButton\").hide();\n\n\t\t\t\t// change instructions\n\t\t\t\t$ (\"#message_area\").text(\"You have been defeated. Click 'Restart' to try again...\");\n\t\t\t}\n\n\t\t\tattackNumber += 1; // increments the strength of the player's attack\n\t\t}\n\n\t}); // end of attack button click\n\n\n\t// click on restart button\n\t$(\"#restartButton\").on(\"click\", function() {\n\n\t\tlocation.reload();\n\n\t}); // end of restart button click\n\n}); // end of document.ready",
 			"file": "assets/javascript/game.js",
-			"file_size": 7645,
-			"file_write_time": 131503987572009860,
 			"settings":
 			{
-				"buffer_size": 7460,
+				"buffer_size": 7865,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -344,7 +353,7 @@
 			"file": "assets/css/style.css",
 			"settings":
 			{
-				"buffer_size": 541,
+				"buffer_size": 784,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -569,7 +578,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -578,15 +587,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1819,
+						"buffer_size": 1990,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1378,
-								1378
+								1188,
+								1188
 							]
 						],
 						"settings":
@@ -595,7 +604,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 669.0,
+						"translation.y": 480.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -607,15 +616,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7460,
+						"buffer_size": 7865,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7297,
-								7297
+								7688,
+								7694
 							]
 						],
 						"settings":
@@ -624,10 +633,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2040.0,
+						"translation.y": 4016.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -666,15 +675,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 541,
+						"buffer_size": 784,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								290,
-								290
+								563,
+								563
 							]
 						],
 						"settings":
@@ -683,10 +692,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 240.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

@@ -14,13 +14,16 @@ h1 {
 	font-weight: bold;
 }
 
-.game_area {
+.container {
 	padding-top: 20px;
+	background-color: #000000;
+	opacity: 0.8;
 }
 
 #message_area, #button_area, #attack_messages {
 	min-height: 70px;
 	padding-bottom: 20px;
+
 }
 
 .gameCharacter, .player, .defender {
