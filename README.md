@@ -1,2 +1,6 @@
-# week-4-game
-Coding Boot Camp week 4 homework. Star Wars game. 
+# Starwars-Game
+
+A simple game with a Star Wars theme that demonstrates:
+
+-Use of bootstrap grid for layout.
+-Use of jquery to manipulate elements of the DOM. 
